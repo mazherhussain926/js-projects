@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Timers</title>
+  </head>
+  <body>
+    <h1>Hey! what's going on?</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    document.getElementById("start").addEventListener("click", (e) => {
+      let timer = setInterval(function () {
+        const time = new Date();
+        const currentTime = time.toLocaleTimeString();
+        let timeElement = document.createElement("h2");
+        timeElement.textContent = currentTime;
+        timeElement.style.color ="green"
+        document.body.appendChild(timeElement);
+      }, 2000);
+      document.getElementById("stop").addEventListener("click", (e) => {
+        clearTimeout(timer);
+      });
+    });
+  </script>
+</html>

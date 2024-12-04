@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Checker</title>
+  </head>
+  <style>
+    body {
+      /* margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #fff;
+      text-align: center; */
+    }
+    div {
+      /* width: 100vw;
+      height: 100vh;
+      background: green; */
+    }
+    table, th, td {
+  border:1px solid black;
+}
+  </style>
+  <body>
+    <div id="key-checker">
+      <h1>Press the key and check the magic</h1>
+    </div>
+  </body>
+  <script>
+    window.addEventListener("keydown", (e) => {
+      let mainDiv = document.getElementById("key-checker");
+      let div = document.createElement("div");
+      div.innerHTML = `<table>
+  <tr>
+    <th>Key</th>
+    <th>Code</th>
+  </tr>
+  
+  <tr>
+   <td> ${e.key == " " ? "shift" : e.key} </td>
+    <td> ${e.keyCode}</td>
+  </tr>
+</table>`;
+      mainDiv.appendChild(div);
+    });
+  </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer</title>
+  </head>
+  <body>
+    <h1>Color Changer</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const hexNum = "0123456789ABCDEF";
+    //create color
+    function colorGenerator() {
+      let hexValue = "#";
+      for (let i = 0; i < 6; i++) {
+        let randomIndex = Math.floor(Math.random() * 16);
+        hexValue += hexNum.charAt(randomIndex);
+      }
+      return hexValue;
+    }
+    // change body color
+    function colorChanger() {
+      let newColor = colorGenerator();
+      document.body.style.backgroundColor = newColor;
+    }
+
+    let intervalStart = null;
+
+    document.getElementById("start").addEventListener("click", () => {
+      if (!intervalStart) {
+        intervalStart = setInterval(colorChanger, 2000);
+      }
+    });
+
+    document.getElementById("stop").addEventListener("click", () => {
+      if (intervalStart) {
+        clearInterval(intervalStart);
+        intervalStart = null;
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,24 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: #464343;
+    color:rgb(231, 221, 221)
+}
+#main{
+    display :flex;
+    flex-direction: column;
+    align-items:center;
+}
+input{
+    width: 20%;
+    height: 30px;
+}
+#btn{
+    width: 10%;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #bfbfd4;
+    border: 2px solid rgb(201, 195, 195);
+    border-radius: 5px;
+    
+}

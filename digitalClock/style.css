@@ -1,0 +1,25 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: black;
+    color:gainsboro
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+}
+#clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 40vw;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: black;
+}
+
